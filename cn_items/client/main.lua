@@ -30,7 +30,7 @@ AddEventHandler("cn:lappen", function()
   local coords = GetEntityCoords(myPed)
 
   if IsAnyVehicleNearPoint(coords.x, coords.y, coords.z, 6.0) then
-      local fahrzeug = nil
+      local vehicle = nil
 
         vehicle = GetClosestVehicle(coords.x, coords.y, coords.z, 5.0, 0, 71)
 
