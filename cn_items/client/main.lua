@@ -39,7 +39,8 @@ AddEventHandler("cn:lappen", function()
         TaskStartScenarioInPlace(myPed, "WORLD_HUMAN_BUM_WASH", 0, true)
 
         Citizen.CreateThread(function()
-          Thread = GetIdOfThisThread()
+          while true do
+            Wait(0)
           AktiveAktion = "waschen"
 
           Citizen.Wait(30* 1000) -- 30 Sekunden
@@ -48,8 +49,10 @@ AddEventHandler("cn:lappen", function()
             WashDecalsFromVehicle(vehicle, myPed, 1.0)
             SetVehicleDirtLevel(vehicle, myPed)
 
-            break
+           
           end
+        end
+        break
         end)
       else
         -- Notification: Du stehst nicht neben ein Fahrzeug.
